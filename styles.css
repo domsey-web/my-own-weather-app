@@ -79,3 +79,9 @@ span .fa-cloud-sun,
 .weekday {
   margin-top: 20px;
 }
+
+.open-source-link {
+  color: black;
+  font-size: 11px;
+  text-align: center;
+}
