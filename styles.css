@@ -27,18 +27,22 @@ body {
 
 .city {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 48px;
+  font-size: 36px;
 }
 .date-time {
   font-family: "Lato", sans-serif;
   font-weight: 700;
 }
 
+.temp {
+  font-size: 52px;
+}
+
 .units {
   font-size: 12px;
   position: relative;
   line-height: 1;
-  top: -23px;
+  top: -30px;
 }
 
 ul {
@@ -52,11 +56,14 @@ li {
   margin: 0;
   padding: 0px;
 }
-
 .weather_specifics {
   font-size: 14px;
   padding: 10px;
   text-align: center;
+  text-transform: capitalize;
+}
+
+.weather_specifics ::first-letter {
 }
 
 .other-weather {
@@ -77,14 +84,14 @@ span .fa-cloud-sun,
 .fa-bolt,
 .fa-cloud {
   color: #fff;
-  font-size: 40px;
+  font-size: 28px;
 }
 
 .week_weather {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 25px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-  padding-top: 15px;
+  padding: 15px;
 }
 
 .weekday {

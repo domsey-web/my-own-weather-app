@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lato:wght@400;700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css" />
     <script src="https://kit.fontawesome.com/a74164714c.js" crossorigin="anonymous"></script>
 
@@ -38,7 +40,7 @@
                     </p>
                     <div class="row">
                         <div class="col-7">
-                            <ul>
+                            <ul class="weather_specifics_class">
                                 <li class="weather_specifics" id="description">mostly cloudy
                                 </li>
                             </ul>
@@ -46,18 +48,20 @@
                     <h2 class="temperature">
                         <i class="fas fa-cloud-showers-heavy"> 
                         </i> 
-                            <span id="temp">21
+                            <span class="temp" id="temp">21
                             </span>
                         <span class="units"> <a href="#" id="celcius-link">°C</a> | <a href="#"
-                                id="fahrenheit-link">°F</a> </span></h2>
+                                id="fahrenheit-link">°F</a> 
+                        </span>
+                    </h2>
                         </div>
                              <div class="col-5">
                                 <ul class="other-weather">
                                     <li>
-                                    Humidity: 61%
+                                    Humidity: <span id= "humidity">61</span>%
                                     </li>
                                     <li>
-                                    Wind: 3 km/h
+                                    Wind: <span id="windspeed">3</span> km/h
                                     </li>
                                 </ul>
                             </div>

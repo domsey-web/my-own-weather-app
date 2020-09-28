@@ -54,25 +54,21 @@ changeToFahrenheit.addEventListener("click", clickF);
 
 // ~ Location & Temp Change ~
 
-function searchCity(event) {
-  event.preventDefault();
-  let usersCity = document.querySelector("#city-input");
-
-  let newCity = document.querySelector("#city");
-  newCity.innerHTML = `${usersCity.value}`;
-
-  let apiKey = "d2b4efd6e0f5423f450f89aaf0181665";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${usersCity.value}&units=metric&appid=${apiKey}`;
-
-  function newTemp(response) {
-    let temperature = Math.round(response.data.main.temp);
-
-    let newTemp = document.querySelector("#temp");
-    newTemp.innerHTML = `${temperature}`;
-  }
-
-  axios.get(`${apiUrl}`).then(newTemp);
+function displayTemperature(response) {
+  console.log(response.data.weather[0].description);
+  let temperatureElement = document.querySelector("#temp");
+  let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windspeedElement = document.querySelector("#windspeed");
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windspeedElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
-let searchButton = document.querySelector("#submit-button");
-searchButton.addEventListener("click", searchCity);
+let apiKey = "d2b4efd6e0f5423f450f89aaf0181665";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Cardiff&units=metric&appid=${apiKey}`;
+
+axios.get(apiUrl).then(displayTemperature);
