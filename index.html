@@ -20,57 +20,88 @@
         <div class="card">
             <div class="card-body">
                 <form id="search-form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="city-input" aria-describedby="emailHelp"
-                            placeholder="Search City" />
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="city-input" aria-describedby="emailHelp"
+                            placeholder="Type a City" />
+                            </div>
+                        </div>
+                    <div class="col-3">
+                        <input type="submit" id="submit-button" value="Search" class="btn btn-primary w-100">
                     </div>
-                    <div>
-                        <input type="submit" id="submit-button" value="Search" class="submit-button">
                     </div>
-
-
                     <h1 class="city" id="city">
                         Bristol
                     </h1>
-                    <p class="date-time" id="date-time">Monday, 18:32 PM</p>
-                    <ul>
-                        <li class="weather_specifics">19°C / 21°C</li>
-                        <li class="weather_specifics">feels like 20°C</li>
-                        <li class="weather_specifics">mostly cloudy</li>
-                    </ul>
+                    <p class="date-time" id="date-time">Monday, 18:32 PM
+                    </p>
+                    <div class="row">
+                        <div class="col-7">
+                            <ul>
+                                <li class="weather_specifics" id="description">mostly cloudy
+                                </li>
+                            </ul>
                     <!-- try putting as seperate p elements instead of a span -->
-                    <h2 class="temperature"><i class="fas fa-cloud-showers-heavy"> </i> <span id="temp">21</span>
+                    <h2 class="temperature">
+                        <i class="fas fa-cloud-showers-heavy"> 
+                        </i> 
+                            <span id="temp">21
+                            </span>
                         <span class="units"> <a href="#" id="celcius-link">°C</a> | <a href="#"
                                 id="fahrenheit-link">°F</a> </span></h2>
-                    <p class="restofweek">Week forecast</p>
+                        </div>
+                             <div class="col-5">
+                                <ul class="other-weather">
+                                    <li>
+                                    Humidity: 61%
+                                    </li>
+                                    <li>
+                                    Wind: 3 km/h
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>
                     <section class="week_weather">
                         <div style="text-align:center" class="row">
-                            <div class="col-3">
+                            <div class="col-2">
                                 <p class="day_temperature">27°C</p>
-                                <span><i class="fas fa-sun"></i></span>
-                                <p class="weekday">Tuesday</p>
+                                    <span><i class="fas fa-sun"></i></span>
+                                    <p class="weekday">Tue</p>
                             </div>
-                            <div class="col-3">
+                            <div class="col-2">
                                 <p class="day_temperature">23°C</p>
-                                <span><i class="fas fa-bolt"></i></span>
-                                <p class="weekday">Wednesday</p>
+                                    <span><i class="fas fa-bolt"></i></span>
+                                <p class="weekday">Weds</p>
                             </div>
-                            <div class="col-3">
+                            <div class="col-2">
                                 <p class="day_temperature">22°C</p>
                                 <span><i class="fas fa-cloud-sun"></i></span>
-                                <p class="weekday">Thursday</p>
+                                <p class="weekday">Thur</p>
                             </div>
-                            <div class="col-3">
+                            <div class="col-2">
                                 <p class="day_temperature">19°C</p>
                                 <span><i class="fas fa-cloud"></i></span>
-                                <p class="weekday">Friday</p>
+                                <p class="weekday">Fri</p>
+                            </div>
+                            <div class="col-2">
+                                <p class="day_temperature">19°C</p>
+                                <span><i class="fas fa-cloud"></i></span>
+                                <p class="weekday">Sat</p>
+                            </div>
+                            <div class="col-2">
+                                <p class="day_temperature">19°C</p>
+                                <span><i class="fas fa-cloud"></i></span>
+                                <p class="weekday">Sun</p>
                             </div>
                         </div>
                     </section>
             </div>
         </div>
     </div>
+    <footer>
     <p class="open-source-link"><a href= "https://github.com/domsey-web/my-own-weather-app" target="_blank">Open-source code</a> by Dominique Seyi</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 

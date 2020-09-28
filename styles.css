@@ -17,15 +17,6 @@ body {
   border-radius: 10px;
 }
 
-.submit-button {
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-  color: #495057;
-
-  line-height: 1.5;
-  padding: 0.375rem 0.75rem;
-}
-
 .city,
 .date-time,
 .temperature,
@@ -62,16 +53,18 @@ li {
   padding: 0px;
 }
 
-.restofweek {
-  font-size: 12px;
-  margin-left: 15px;
-  margin-bottom: 5px;
+.weather_specifics {
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
 }
 
-.weather_specifics {
-  font-size: 12px;
-  padding: 8px;
-  text-align: center;
+.other-weather {
+  padding: 10px;
+}
+
+.other-weather li {
+  font-size: 14px;
 }
 
 .temperature {
