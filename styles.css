@@ -34,6 +34,9 @@ body {
   font-weight: 700;
 }
 
+.dateparagraph {
+  text-align: center;
+}
 .temp {
   font-size: 52px;
 }
@@ -60,10 +63,10 @@ li {
   font-size: 14px;
   padding: 10px;
   text-align: center;
-  text-transform: capitalize;
 }
 
-.weather_specifics ::first-letter {
+li::first-letter {
+  text-transform: capitalize;
 }
 
 .other-weather {
