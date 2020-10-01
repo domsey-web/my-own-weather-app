@@ -1,0 +1,151 @@
+body {
+  background-image: linear-gradient(
+    to top,
+    #bdc2e8 0%,
+    #bdc2e8 1%,
+    #e6dee9 100%
+  );
+  color: #fff;
+  display: block;
+  font-family: "Lato", sans-serif;
+  margin: 40px;
+  margin-bottom: 73px;
+}
+
+.container {
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  display: block;
+  height: 600px;
+  width: 460px;
+}
+
+.card {
+  background-color: rgba(245, 245, 245, 0.4);
+  border-radius: 10px;
+  margin: 5px auto;
+  height: 460px;
+}
+
+.card-header,
+.card-footer {
+  opacity: 5;
+}
+
+.form-section {
+  padding-top: 30px;
+}
+
+.form-control {
+  background-color: #fff;
+}
+.btn-outline-secondary {
+  border-color: #c2c3c3;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #bdc2e8;
+  border-color: #bdc2e8;
+}
+
+.fa-search-location {
+  color: #bdc2e8;
+  font-size: 20px;
+}
+
+.btn-outline-secondary:hover .fa-search-location {
+  color: #fff;
+}
+
+.location-button {
+  border: 1px solid #c2c3c3;
+  border-radius: 0.25rem;
+  height: calc(2.25rem + 2px);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-right: 50px;
+}
+
+.header-section {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 26px;
+  padding: 0;
+}
+
+.background-row {
+  background: url("https://i.ibb.co/WWnqSVg/weatherbackground1.png");
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center;
+}
+
+.weather-temperature img {
+  height: 64px;
+  margin-left: -20px;
+  width: 64px;
+}
+.temperature {
+  font-size: 42px;
+}
+
+.superscript-conversion {
+  font-size: 13px;
+  top: -21px;
+}
+
+ul {
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+li {
+  height: 18px;
+  list-style-type: none;
+  margin-top: 5px;
+  padding: 0px;
+}
+
+li::first-letter {
+  text-transform: capitalize;
+}
+
+.weather_specifics {
+  font-size: 14px;
+  padding: 0px;
+  text-align: left;
+}
+
+.other-weather {
+  font-size: 14px;
+}
+
+.week-forecast {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.future_times,
+.future_temps {
+  color: #000;
+
+  font-size: 14px;
+}
+
+.fa-cloud-sun,
+.fa-sun,
+.fa-bolt,
+.fa-cloud {
+  color: #000;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+footer {
+  color: black;
+  font-size: 11px;
+  padding: 10px;
+  text-align: center;
+}

@@ -1,112 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lato:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lato:wght@400;700&family=Oxygen&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://kit.fontawesome.com/a74164714c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/a74164714c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div class="container">
-        <div class="card">
-            <div class="card-body">
-                <form id="search-form">
-                    <div class="row">
-                        <div class="col-9">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="city-input" aria-describedby="emailHelp"
-                            placeholder="Type a City" />
-                            </div>
-                        </div>
-                    <div class="col-3">
-                        <input type="submit" id="submit-button" value="Search" class="btn btn-primary w-100">
-                    </div>
-                    </div>
-                    <h1 class="city" id="city">
-                        Bristol
-                    </h1>
-                    <p class="dateparagraph">Last updated: <span class="date-time" id="date">Monday, 18:32 PM
-                    </span></p>
-                    <div class="row">
-                        <div class="col-7">
-                            <ul class="weather_specifics_class">
-                                <li class="weather_specifics" id="description">mostly cloudy
-                                </li>
-                            </ul>
-                    <!-- try putting as seperate p elements instead of a span -->
-                    <h2 class="temperature">
-                        <i class="fas fa-cloud-showers-heavy"> 
-                        </i> 
-                            <span class="temp" id="temp">21
-                            </span>
-                        <span class="units"> <a href="#" id="celcius-link">°C</a> | <a href="#"
-                                id="fahrenheit-link">°F</a> 
-                        </span>
-                    </h2>
-                        </div>
-                             <div class="col-5">
-                                <ul class="other-weather">
-                                    <li>
-                                    Humidity: <span id= "humidity">61</span>%
-                                    </li>
-                                    <li>
-                                    Wind: <span id="windspeed">3</span> km/h
-                                    </li>
-                                </ul>
-                            </div>
-                    </div>
-                    <section class="week_weather">
-                        <div style="text-align:center" class="row">
-                            <div class="col-2">
-                                <p class="day_temperature">27°C</p>
-                                    <span><i class="fas fa-sun"></i></span>
-                                    <p class="weekday">Tue</p>
-                            </div>
-                            <div class="col-2">
-                                <p class="day_temperature">23°C</p>
-                                    <span><i class="fas fa-bolt"></i></span>
-                                <p class="weekday">Weds</p>
-                            </div>
-                            <div class="col-2">
-                                <p class="day_temperature">22°C</p>
-                                <span><i class="fas fa-cloud-sun"></i></span>
-                                <p class="weekday">Thur</p>
-                            </div>
-                            <div class="col-2">
-                                <p class="day_temperature">19°C</p>
-                                <span><i class="fas fa-cloud"></i></span>
-                                <p class="weekday">Fri</p>
-                            </div>
-                            <div class="col-2">
-                                <p class="day_temperature">19°C</p>
-                                <span><i class="fas fa-cloud"></i></span>
-                                <p class="weekday">Sat</p>
-                            </div>
-                            <div class="col-2">
-                                <p class="day_temperature">19°C</p>
-                                <span><i class="fas fa-cloud"></i></span>
-                                <p class="weekday">Sun</p>
-                            </div>
-                        </div>
-                    </section>
+      <div class="form-section">
+        <div class="row">
+          <div class="col">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="city-input"
+                placeholder="Search City"
+              />
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">
+                  <i class="fas fa-search-location"> </i>
+                </button>
+              </div>
             </div>
+          </div>
+          <div class="location" id="location">
+            <button class="location-button">Current</button>
+          </div>
         </div>
-    </div>
-    <footer>
-    <p class="open-source-link"><a href= "https://github.com/domsey-web/my-own-weather-app" target="_blank">Open-source code</a> by Dominique Seyi</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="card" style="width: 27rem">
+            <img class="card-img" src="images/weatherbackground1.png" alt="Card image">
+            <div class="card-img-overlay">
+            <div class="card-body">
+              <h1 class="header-section">
+                <span id="city"></span>
+              </h1>
+              <ul class="weather_specifics_class">
+                <li class="date-time" id="date"></li>
+                <li class="weather_specifics" id="description">
+                  mostly cloudy
+                </li>
+              </ul>
+            <div class="clearfix weather-temperature">
+                <img src="images/icon.png" alt="Clear" id="icon" class="float-left" />
+              <h2 class="temperature">
+                
+                <span class="temp" id="temp"></span>°
+                <span class="units">
+                  <sup class="superscript-conversion">
+                    <a href="#" id="celcius-link">C</a> |
+                    <a href="#" id="fahrenheit-link">F</a></sup
+                  >
+                </span>
+              </h2>
+              </div>
+              <div class="extra-weather">
+                <ul class="other-weather">
+                  <li>Humidity: <span id="humidity">61</span>%</li>
+                  <li>Wind: <span id="windspeed">3</span> km/h</li>
+                </ul>
+              </div>
+            </div>
 
+            <div class="week-forecast">
+              <div class="col2">
+                <div style="text-align: center" class="row">
+                  <div class="col-2">
+                    <p class="future_times">16:00</p>
+                    <span><i class="fas fa-sun"></i></span>
+                    <p class="future_temps">27°C</p>
+                  </div>
+                  <div class="col-2">
+                    <p class="future_times">19:00</p>
+                    <span><i class="fas fa-bolt"></i></span>
+                    <p class="future_temps">27°C</p>
+                  </div>
+                  <div class="col-2">
+                    <p class="future_times">22:00</p>
+                    <span><i class="fas fa-cloud-sun"></i></span>
+                    <p class="future_temps">27°C</p>
+                  </div>
+                  <div class="col-2">
+                    <p class="future_times">01:00</p>
+                    <span><i class="fas fa-cloud"></i></span>
+                    <p class="future_temps">27°C</p>
+                  </div>
+                  <div class="col-2">
+                    <p class="future_times">04:00</p>
+                    <span><i class="fas fa-cloud"></i></span>
+                    <p class="future_temps">27°C</p>
+                  </div>
+                  <div class="col-2">
+                    <p class="future_times">07:00</p>
+                    <span><i class="fas fa-cloud"></i></span>
+                    <p class="future_temps">27°C</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        <a
+          href="https://github.com/domsey-web/my-own-weather-app"
+          target="_blank"
+          >Open-source code
+        </a>
+        by Dominique Seyi
+      </p>
+    </footer>
+    <script src="src/script.js"></script>
+  </body>
 </html>
