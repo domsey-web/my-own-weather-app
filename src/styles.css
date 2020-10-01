@@ -1,10 +1,5 @@
 body {
-  background-image: linear-gradient(
-    to top,
-    #bdc2e8 0%,
-    #bdc2e8 1%,
-    #e6dee9 100%
-  );
+  background-color: #dee2f6;
   color: #fff;
   display: block;
   font-family: "Lato", sans-serif;
@@ -35,6 +30,10 @@ body {
 
 .form-section {
   padding-top: 30px;
+}
+
+.form-button-row {
+  margin-left: 10px;
 }
 
 .form-control {
