@@ -29,96 +29,100 @@
 
   <body>
     <div class="container">
-      <div class="form-section">
-        <div class="row form-button-row">
-          <div class="col">
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="city-input"
-                placeholder="Search City"
-              />
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">
-                  <i class="fas fa-search-location"> </i>
-                </button>
-              </div>
+      <div class="weather-app-wrapper">
+        <div class="form-section">
+          <div class="row form-button-row">
+            <div class="col">
+              <form class="input-group mb-3" id="search-form">
+                <input
+                  type="search"
+                  class="form-control"
+                  id="city-input"
+                  placeholder="Search City"
+                />
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button">
+                    <i class="fas fa-search-location"> </i>
+                  </button>
+                </div>
+              </form>
             </div>
-          </div>
-          <div class="location" id="location">
-            <button class="location-button">Current</button>
+            <div class="location" id="location">
+              <button class="location-button">Current Location</button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="card" style="width: 27rem">
-            <img class="card-img" src="images/weatherbackground1.png" alt="Card image">
+        <div class="row">
+          <div class="col-12">
+            <img
+              class="card-img"
+              src="images/weatherbackground1.png"
+              alt="Card image"
+            />
             <div class="card-img-overlay">
-            <div class="card-body">
-              <h1 class="header-section">
-                <span id="city"></span>
-              </h1>
-              <ul class="weather_specifics_class">
-                <li class="date-time" id="date"></li>
-                <li class="weather_specifics" id="description">
-                  mostly cloudy
-                </li>
-              </ul>
-            <div class="clearfix weather-temperature">
-                <img src="" alt="Clear" id="icon" class="float-left" />
-              <h2 class="temperature">
-                
-                <span class="temp" id="temp"></span>°
-                <span class="units">
-                  <sup class="superscript-conversion">
-                    <a href="#" id="celcius-link">C</a> |
-                    <a href="#" id="fahrenheit-link">F</a></sup
-                  >
-                </span>
-              </h2>
-              </div>
-              <div class="extra-weather">
-                <ul class="other-weather">
-                  <li>Humidity: <span id="humidity">61</span>%</li>
-                  <li>Wind: <span id="windspeed">3</span> km/h</li>
+              <div class="card-body">
+                <h1 class="header-section">
+                  <span id="city"></span>
+                </h1>
+                <ul class="weather_specifics_class">
+                  <li class="date-time" id="date"></li>
+                  <li class="weather_specifics" id="description">
+                    mostly cloudy
+                  </li>
                 </ul>
+                <div class="clearfix weather-temperature">
+                  <img src="" alt="Clear" id="icon" class="float-left" />
+                  <h2 class="temperature">
+                    <span class="temp" id="temp"></span>°
+                    <span class="units">
+                      <sup class="superscript-conversion">
+                        <a href="#" id="celcius-link">C</a> |
+                        <a href="#" id="fahrenheit-link">F</a></sup
+                      >
+                    </span>
+                  </h2>
+                </div>
+                <div class="extra-weather">
+                  <ul class="other-weather">
+                    <li>Humidity: <span id="humidity">61</span>%</li>
+                    <li>Wind: <span id="windspeed">3</span> km/h</li>
+                  </ul>
+                </div>
               </div>
-            </div>
 
-            <div class="week-forecast">
-              <div class="col2">
-                <div style="text-align: center" class="row">
-                  <div class="col-2">
-                    <p class="future_times">16:00</p>
-                    <span><i class="fas fa-sun"></i></span>
-                    <p class="future_temps">27°C</p>
-                  </div>
-                  <div class="col-2">
-                    <p class="future_times">19:00</p>
-                    <span><i class="fas fa-bolt"></i></span>
-                    <p class="future_temps">27°C</p>
-                  </div>
-                  <div class="col-2">
-                    <p class="future_times">22:00</p>
-                    <span><i class="fas fa-cloud-sun"></i></span>
-                    <p class="future_temps">27°C</p>
-                  </div>
-                  <div class="col-2">
-                    <p class="future_times">01:00</p>
-                    <span><i class="fas fa-cloud"></i></span>
-                    <p class="future_temps">27°C</p>
-                  </div>
-                  <div class="col-2">
-                    <p class="future_times">04:00</p>
-                    <span><i class="fas fa-cloud"></i></span>
-                    <p class="future_temps">27°C</p>
-                  </div>
-                  <div class="col-2">
-                    <p class="future_times">07:00</p>
-                    <span><i class="fas fa-cloud"></i></span>
-                    <p class="future_temps">27°C</p>
+              <div class="week-forecast">
+                <div class="col2">
+                  <div style="text-align: center" class="row">
+                    <div class="col-2">
+                      <p class="future_times">16:00</p>
+                      <span><i class="fas fa-sun"></i></span>
+                      <p class="future_temps">27°C</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="future_times">19:00</p>
+                      <span><i class="fas fa-bolt"></i></span>
+                      <p class="future_temps">27°C</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="future_times">22:00</p>
+                      <span><i class="fas fa-cloud-sun"></i></span>
+                      <p class="future_temps">27°C</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="future_times">01:00</p>
+                      <span><i class="fas fa-cloud"></i></span>
+                      <p class="future_temps">27°C</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="future_times">04:00</p>
+                      <span><i class="fas fa-cloud"></i></span>
+                      <p class="future_temps">27°C</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="future_times">07:00</p>
+                      <span><i class="fas fa-cloud"></i></span>
+                      <p class="future_temps">27°C</p>
+                    </div>
                   </div>
                 </div>
               </div>
