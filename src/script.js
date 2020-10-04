@@ -56,14 +56,18 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+// ~ Geolocation ~
+
 // ~ Forecast ~
 
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  let forecast = response.data.list[0];
-  console.log(forecast);
+  forecastElement.innerHTML = null;
+  let forecast = null;
 
-  forecastElement.innerHTML = `
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
   <div class="col-2">
     <p class="future_times">${formatHours(forecast.dt * 1000)}</p>
       <img
@@ -77,97 +81,9 @@ function displayForecast(response) {
     <p class="future_temps"><strong>${Math.round(
       forecast.main.temp_max
     )}°</strong> ${Math.round(forecast.main.temp_min)}°</p>
-   </div>`;
-
-  forecast = response.data.list[1];
-
-  forecastElement.innerHTML = forecastElement.innerHTML += `
-  <div class="col-2">
-    <p class="future_times">${formatHours(forecast.dt * 1000)}</p>
-      <img
-      class="weather-icon-images"
-      width="30px"
-        src="http://openweathermap.org/img/wn/${
-          forecast.weather[0].icon
-        }@2x.png"
-      alt=""
-    />
-    <p class="future_temps"><strong>${Math.round(
-      forecast.main.temp_max
-    )}°</strong> ${Math.round(forecast.main.temp_min)}°</p>
-   </div>`;
-
-  forecast = response.data.list[2];
-
-  forecastElement.innerHTML = forecastElement.innerHTML += `
-  <div class="col-2">
-    <p class="future_times">${formatHours(forecast.dt * 1000)}</p>
-      <img
-      class="weather-icon-images"
-      width="30px"
-        src="http://openweathermap.org/img/wn/${
-          forecast.weather[0].icon
-        }@2x.png"
-      alt=""
-    />
-    <p class="future_temps"><strong>${Math.round(
-      forecast.main.temp_max
-    )}°</strong> ${Math.round(forecast.main.temp_min)}°</p>
-   </div>`;
-
-  forecast = response.data.list[3];
-
-  forecastElement.innerHTML = forecastElement.innerHTML += `
-  <div class="col-2">
-    <p class="future_times">${formatHours(forecast.dt * 1000)}</p>
-      <img
-      class="weather-icon-images"
-      width="30px"
-        src="http://openweathermap.org/img/wn/${
-          forecast.weather[0].icon
-        }@2x.png"
-      alt=""
-    />
-    <p class="future_temps"><strong>${Math.round(
-      forecast.main.temp_max
-    )}°</strong> ${Math.round(forecast.main.temp_min)}°</p>
-   </div>`;
-
-  forecast = response.data.list[4];
-
-  forecastElement.innerHTML = forecastElement.innerHTML += `
-  <div class="col-2">
-    <p class="future_times">${formatHours(forecast.dt * 1000)}</p>
-      <img
-      class="weather-icon-images"
-      width="30px"
-        src="http://openweathermap.org/img/wn/${
-          forecast.weather[0].icon
-        }@2x.png"
-      alt=""
-    />
-    <p class="future_temps"><strong>${Math.round(
-      forecast.main.temp_max
-    )}°</strong> ${Math.round(forecast.main.temp_min)}°</p>
-   </div>`;
-
-  forecast = response.data.list[5];
-
-  forecastElement.innerHTML = forecastElement.innerHTML += `
-  <div class="col-2">
-    <p class="future_times">${formatHours(forecast.dt * 1000)}</p>
-      <img
-      class="weather-icon-images"
-      width="30px"
-        src="http://openweathermap.org/img/wn/${
-          forecast.weather[0].icon
-        }@2x.png"
-      alt=""
-    />
-    <p class="future_temps"><strong>${Math.round(
-      forecast.main.temp_max
-    )}°</strong> ${Math.round(forecast.main.temp_min)}°</p>
-   </div>`;
+   </div>
+   `;
+  }
 }
 
 // ~ Search City ~
