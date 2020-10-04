@@ -1,47 +1,8 @@
-// ~ Celcius/Fahrenheit ~
-
-/* function search(event) {
-  event.preventDefault();
-  let cityElement = document.querySelector("#city");
-  let cityInput = document.querySelector("#city-input");
-  cityElement.innerHTML = cityInput.value;
-}
-
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", search);
-
-function clickC(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#temp");
-  temp.innerHTML = 20;
-}
-let changeToCelsius = document.querySelector("#celcius-link");
-changeToCelsius.addEventListener("click", clickC);
-
-function clickF(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#temp");
-  temp.innerHTML = "80";
-}
-
-let changeToFahrenheit = document.querySelector("#fahrenheit-link");
-changeToFahrenheit.addEventListener("click", clickF);
- */
 // ~ Date & Time ~
 
 function formatDate(timestamp) {
   let date = new Date(timestamp);
-  let hours = date.getHours();
 
-  hoursBackground = date.getHours();
-
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
   let days = [
     "Sunday",
     "Monday",
@@ -52,9 +13,23 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  return `${day}, ${hours}:${minutes} `;
+  return `${day}, ${formatHours(timestamp)}`;
 }
 
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}
 // ~ Location & Temp Change ~
 
 function displayTemperature(response) {
@@ -81,12 +56,129 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+// ~ Forecast ~
+
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  let forecast = response.data.list[0];
+  console.log(forecast);
+
+  forecastElement.innerHTML = `
+  <div class="col-2">
+    <p class="future_times">${formatHours(forecast.dt * 1000)}</p>
+      <img
+      class="weather-icon-images"
+      width="30px"
+        src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"
+      alt=""
+    />
+    <p class="future_temps"><strong>${Math.round(
+      forecast.main.temp_max
+    )}°</strong> ${Math.round(forecast.main.temp_min)}°</p>
+   </div>`;
+
+  forecast = response.data.list[1];
+
+  forecastElement.innerHTML = forecastElement.innerHTML += `
+  <div class="col-2">
+    <p class="future_times">${formatHours(forecast.dt * 1000)}</p>
+      <img
+      class="weather-icon-images"
+      width="30px"
+        src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"
+      alt=""
+    />
+    <p class="future_temps"><strong>${Math.round(
+      forecast.main.temp_max
+    )}°</strong> ${Math.round(forecast.main.temp_min)}°</p>
+   </div>`;
+
+  forecast = response.data.list[2];
+
+  forecastElement.innerHTML = forecastElement.innerHTML += `
+  <div class="col-2">
+    <p class="future_times">${formatHours(forecast.dt * 1000)}</p>
+      <img
+      class="weather-icon-images"
+      width="30px"
+        src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"
+      alt=""
+    />
+    <p class="future_temps"><strong>${Math.round(
+      forecast.main.temp_max
+    )}°</strong> ${Math.round(forecast.main.temp_min)}°</p>
+   </div>`;
+
+  forecast = response.data.list[3];
+
+  forecastElement.innerHTML = forecastElement.innerHTML += `
+  <div class="col-2">
+    <p class="future_times">${formatHours(forecast.dt * 1000)}</p>
+      <img
+      class="weather-icon-images"
+      width="30px"
+        src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"
+      alt=""
+    />
+    <p class="future_temps"><strong>${Math.round(
+      forecast.main.temp_max
+    )}°</strong> ${Math.round(forecast.main.temp_min)}°</p>
+   </div>`;
+
+  forecast = response.data.list[4];
+
+  forecastElement.innerHTML = forecastElement.innerHTML += `
+  <div class="col-2">
+    <p class="future_times">${formatHours(forecast.dt * 1000)}</p>
+      <img
+      class="weather-icon-images"
+      width="30px"
+        src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"
+      alt=""
+    />
+    <p class="future_temps"><strong>${Math.round(
+      forecast.main.temp_max
+    )}°</strong> ${Math.round(forecast.main.temp_min)}°</p>
+   </div>`;
+
+  forecast = response.data.list[5];
+
+  forecastElement.innerHTML = forecastElement.innerHTML += `
+  <div class="col-2">
+    <p class="future_times">${formatHours(forecast.dt * 1000)}</p>
+      <img
+      class="weather-icon-images"
+      width="30px"
+        src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"
+      alt=""
+    />
+    <p class="future_temps"><strong>${Math.round(
+      forecast.main.temp_max
+    )}°</strong> ${Math.round(forecast.main.temp_min)}°</p>
+   </div>`;
+}
+
 // ~ Search City ~
 
 function search(city) {
   let apiKey = "d2b4efd6e0f5423f450f89aaf0181665";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(displayTemperature);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function handleSubmit(event) {
@@ -94,6 +186,8 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
+
+// ~ Celcius/Fahrenheit ~
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
@@ -112,15 +206,25 @@ function displayCelciusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celciusTemperature);
 }
 
+// ~ Changing Background ~
+
 function changeBackground() {
   let backgroundImageElement = document.querySelector("#background-image");
+  let date = new Date();
   let hours = date.getHours();
-  if (hours > 12) {
-    backgroundImageElement.style.background = url(
+  if (hours < 12) {
+    backgroundImageElement.setAttribute(
+      "src",
+      "https://i.ibb.co/WWnqSVg/weatherbackground1.png"
+    );
+  } else if (hours < 20) {
+    backgroundImageElement.setAttribute(
+      "src",
       "https://i.ibb.co/56Jyd9q/weatherbackground2.png"
     );
   } else {
-    backgroundImageElement.style.background = url(
+    backgroundImageElement.setAttribute(
+      "src",
       "https://i.ibb.co/kJqVRNz/weatherbackground3.png"
     );
   }
@@ -138,5 +242,4 @@ let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemperature);
 
 search("New York");
-
-// ~ Background Image Change ~
+changeBackground();

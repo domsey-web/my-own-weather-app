@@ -116,14 +116,22 @@ li::first-letter {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 25px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  margin-left: 2px;
+  height: 130px;
+  padding: 18px 0 20px 2px;
+
+  width: 410px;
 }
 
 .future_times,
 .future_temps {
   color: #000;
 
-  font-size: 12px;
+  font-size: 10px;
+}
+
+.weather-icon-images {
+  margin-bottom: 15px;
 }
 
 .fa-cloud-sun,
