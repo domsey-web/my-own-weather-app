@@ -56,8 +56,6 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-// ~ Geolocation ~
-
 // ~ Forecast ~
 
 function displayForecast(response) {
@@ -72,7 +70,7 @@ function displayForecast(response) {
     <p class="future_times">${formatHours(forecast.dt * 1000)}</p>
       <img
       class="weather-icon-images"
-      width="30px"
+      width="50px"
         src="http://openweathermap.org/img/wn/${
           forecast.weather[0].icon
         }@2x.png"
@@ -157,5 +155,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemperature);
 
-search("New York");
+search("Bristol");
 changeBackground();

@@ -30,25 +30,25 @@
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
-        <div class="form-section">
-          <div class="row form-button-row">
-            <div class="col">
-              <form class="input-group mb-3" id="search-form">
-                <input
-                  type="search"
-                  class="form-control"
-                  id="city-input"
-                  placeholder="Search City"
-                />
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button">
-                    <i class="fas fa-search-location"> </i>
-                  </button>
-                </div>
-              </form>
+        <form id="search-form" class="mb-3">
+          <div class="row">
+            <div class="col-9">
+              <input
+                class="form-control"
+                id="city-input"
+                type="search"
+                placeholder="Search City"
+                autocomplete="off"
+              />
+            </div>
+            <div class="col-3">
+              <button type="submit" value="search" class="btn w-100">
+                <i class="fas fa-search-location"> </i>
+              </button>
             </div>
           </div>
-        </div>
+        </form>
+
         <div class="row">
           <div class="col-12">
             <img
@@ -90,58 +90,7 @@
 
               <div class="row week-forecast" id="forecast">
                 <div class="col2">
-                  <div style="text-align: center" class="row">
-                    <!-- <div class="col-2">
-                      <p class="future_times">19:00</p>
-                      <img
-                        class="weather-icon-images"
-                        width="25px"
-                        src="https://www.iconsdb.com/icons/preview/black/rain-xxl.png"
-                        alt=""
-                      />
-                      <p class="future_temps">27°C</p>
-                    </div>
-                    <div class="col-2">
-                      <p class="future_times">22:00</p>
-                      <img
-                        class="weather-icon-images"
-                        width="25px"
-                        src="https://www.iconsdb.com/icons/preview/black/cloud-lighting-xxl.png"
-                        alt=""
-                      />
-                      <p class="future_temps">27°C</p>
-                    </div>
-                    <div class="col-2">
-                      <p class="future_times">01:00</p>
-                      <img
-                        class="weather-icon-images"
-                        width="25px"
-                        src="https://www.iconsdb.com/icons/preview/black/cloud-lighting-xxl.png"
-                        alt=""
-                      />
-                      <p class="future_temps">27°C</p>
-                    </div>
-                    <div class="col-2">
-                      <p class="future_times">04:00</p>
-                      <img
-                        class="weather-icon-images"
-                        width="25px"
-                        src="https://www.iconsdb.com/icons/preview/black/cloud-lighting-xxl.png"
-                        alt=""
-                      />
-                      <p class="future_temps">27°C</p>
-                    </div>
-                    <div class="col-2">
-                      <p class="future_times">07:00</p>
-                      <img
-                        class="weather-icon-images"
-                        width="25px"
-                        src="https://www.iconsdb.com/icons/preview/black/cloud-lighting-xxl.png"
-                        alt=""
-                      />
-                      <p class="future_temps">27°C</p>
-                    </div> -->
-                  </div>
+                  <div style="text-align: center" class="row"></div>
                 </div>
               </div>
             </div>
